@@ -48,12 +48,6 @@ export function AppCard({ app }: { app: AppEntry }) {
         <p className="mt-1 text-sm leading-snug text-young-gray-light/60">{app.description}</p>
       </div>
 
-      {app.tech && (
-        <span className="mt-auto text-[11px] font-medium uppercase tracking-wide text-young-gray-light/35">
-          {app.tech}
-        </span>
-      )}
-
       {app.url === '#' && (
         <span className="absolute bottom-3 right-4 text-[10px] italic text-young-gray-light/40">
           URL pendente
