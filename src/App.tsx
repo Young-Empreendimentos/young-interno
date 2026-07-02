@@ -1,10 +1,12 @@
 import { Loader2 } from 'lucide-react'
 import { useAuth } from './context/AuthProvider'
+import { isAllowedEmail } from './config/access'
 import { Login } from './pages/Login'
 import { Dashboard } from './pages/Dashboard'
+import { AccessDenied } from './pages/AccessDenied'
 
 export default function App() {
-  const { session, loading } = useAuth()
+  const { session, user, loading } = useAuth()
 
   if (loading) {
     return (
@@ -14,5 +16,11 @@ export default function App() {
     )
   }
 
-  return session ? <Dashboard /> : <Login />
+  // Sem sessão → login
+  if (!session) return <Login />
+
+  // Logado, mas fora do domínio permitido → acesso restrito (validação no código)
+  if (!isAllowedEmail(user?.email)) return <AccessDenied />
+
+  return <Dashboard />
 }
