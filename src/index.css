@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Young Empreendimentos — Design System
+   Tokens extraídos do Guia de Marca 1.1
+   ============================================================ */
+@theme {
+  /* Cores principais */
+  --color-young-orange: #fe5009;
+  --color-young-orange-dark: #751900;
+  --color-young-black: #0d0d0d;
+  --color-young-blue: #061b39;
+
+  /* Cinzas */
+  --color-young-gray: #323232;
+  --color-young-gray-light: #d7d7d9;
+  --color-young-gray-lighter: #f2f2f2;
+
+  /* Cores temáticas (concluídos = verde / andamento = azul) */
+  --color-young-green: #03292c;
+  --color-young-teal: #00bcbc;
+  --color-young-blue-deep: #021f59;
+  --color-young-blue-bright: #004ebf;
+
+  /* Superfícies do portal (derivadas do preto da marca) */
+  --color-surface: #141414;
+  --color-surface-raised: #1b1b1b;
+  --color-surface-hover: #222222;
+  --color-border: #2a2a2a;
+
+  /* Tipografia da marca */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-young-black);
+  color: var(--color-young-gray-lighter);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Scrollbar discreta no tema escuro */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* Fundo com brilho sutil laranja/azul no topo */
+.bg-young-glow {
+  background-image:
+    radial-gradient(60rem 40rem at 80% -10%, rgba(254, 80, 9, 0.1), transparent 60%),
+    radial-gradient(50rem 40rem at 0% 0%, rgba(6, 27, 57, 0.55), transparent 55%);
+}
+
+/* Foco acessível com a cor da marca */
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-young-orange);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
