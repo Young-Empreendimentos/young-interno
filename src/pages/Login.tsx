@@ -1,28 +1,13 @@
-import { useState, type FormEvent } from 'react'
-import { Loader2, Lock, Mail } from 'lucide-react'
+import { useState } from 'react'
+import { Loader2 } from 'lucide-react'
 import { useAuth } from '../context/AuthProvider'
 import { isSupabaseConfigured } from '../lib/supabase'
 import { Logo } from '../components/Logo'
 
 export function Login() {
-  const { signIn, signInWithGoogle } = useAuth()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const { signInWithGoogle } = useAuth()
   const [error, setError] = useState<string | null>(null)
-  const [submitting, setSubmitting] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
-
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault()
-    setError(null)
-    setSubmitting(true)
-    const { error } = await signIn(email.trim(), password)
-    if (error) {
-      setError(traduzErro(error))
-      setSubmitting(false)
-    }
-    // Em caso de sucesso, o AuthProvider troca a tela automaticamente.
-  }
 
   async function handleGoogle() {
     setError(null)
@@ -44,24 +29,22 @@ export function Login() {
             Portal Interno
           </h1>
           <p className="mt-1 text-sm text-young-gray-light/70">
-            Acesse todos os sistemas da Young com seu login único.
+            Acesse todos os sistemas da Young com sua conta Google
+            <span className="text-young-gray-light"> @youngempreendimentos.com.br</span>.
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-2xl border border-border bg-surface/80 p-6 shadow-2xl backdrop-blur"
-        >
+        <div className="rounded-2xl border border-border bg-surface/80 p-6 shadow-2xl backdrop-blur">
           <button
             type="button"
             onClick={handleGoogle}
             disabled={googleLoading}
-            className="mb-5 flex w-full items-center justify-center gap-3 rounded-lg border border-border bg-white py-2.5 font-display text-sm font-semibold text-[#1f1f1f] transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
+            className="flex w-full items-center justify-center gap-3 rounded-lg border border-border bg-white py-3 font-display text-sm font-semibold text-[#1f1f1f] transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {googleLoading ? (
               <Loader2 className="size-4 animate-spin" />
             ) : (
-              <svg className="size-4" viewBox="0 0 48 48" aria-hidden="true">
+              <svg className="size-5" viewBox="0 0 48 48" aria-hidden="true">
                 <path
                   fill="#EA4335"
                   d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
@@ -83,70 +66,18 @@ export function Login() {
             {googleLoading ? 'Redirecionando…' : 'Entrar com Google'}
           </button>
 
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px flex-1 bg-border" />
-            <span className="text-xs text-young-gray-light/40">ou</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-
-          <label className="mb-4 block">
-            <span className="mb-1.5 block text-xs font-medium text-young-gray-light/80">
-              E-mail
-            </span>
-            <div className="relative">
-              <Mail className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-young-gray-light/50" />
-              <input
-                type="email"
-                required
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="voce@youngempreendimentos.com.br"
-                className="w-full rounded-lg border border-border bg-young-black/60 py-2.5 pl-9 pr-3 text-sm text-young-gray-lighter placeholder:text-young-gray-light/30 focus:border-young-orange focus:outline-none"
-              />
-            </div>
-          </label>
-
-          <label className="mb-5 block">
-            <span className="mb-1.5 block text-xs font-medium text-young-gray-light/80">
-              Senha
-            </span>
-            <div className="relative">
-              <Lock className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-young-gray-light/50" />
-              <input
-                type="password"
-                required
-                autoComplete="current-password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                className="w-full rounded-lg border border-border bg-young-black/60 py-2.5 pl-9 pr-3 text-sm text-young-gray-lighter placeholder:text-young-gray-light/30 focus:border-young-orange focus:outline-none"
-              />
-            </div>
-          </label>
-
           {error && (
-            <p className="mb-4 rounded-lg border border-young-orange/40 bg-young-orange/10 px-3 py-2 text-sm text-young-orange">
+            <p className="mt-4 rounded-lg border border-young-orange/40 bg-young-orange/10 px-3 py-2 text-sm text-young-orange">
               {error}
             </p>
           )}
 
           {!isSupabaseConfigured && (
-            <p className="mb-4 rounded-lg border border-young-blue-bright/40 bg-young-blue-bright/10 px-3 py-2 text-xs text-young-blue-bright">
-              Supabase não configurado. Copie <code>.env.example</code> para{' '}
-              <code>.env</code> e preencha as credenciais.
+            <p className="mt-4 rounded-lg border border-young-blue-bright/40 bg-young-blue-bright/10 px-3 py-2 text-xs text-young-blue-bright">
+              Supabase não configurado. Verifique as variáveis de ambiente.
             </p>
           )}
-
-          <button
-            type="submit"
-            disabled={submitting}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-young-orange py-2.5 font-display text-sm font-semibold text-young-black transition hover:bg-young-orange/90 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            {submitting && <Loader2 className="size-4 animate-spin" />}
-            {submitting ? 'Entrando…' : 'Entrar'}
-          </button>
-        </form>
+        </div>
 
         <p className="mt-8 text-center font-display text-xs tracking-wide text-young-gray-light/40">
           Valorizando sonhos, construindo o futuro.
@@ -157,8 +88,8 @@ export function Login() {
 }
 
 function traduzErro(msg: string): string {
-  if (/invalid login credentials/i.test(msg)) return 'E-mail ou senha inválidos.'
-  if (/email not confirmed/i.test(msg)) return 'E-mail ainda não confirmado.'
+  if (/popup|cancel/i.test(msg)) return 'Login cancelado. Tente novamente.'
   if (/rate limit/i.test(msg)) return 'Muitas tentativas. Aguarde um instante.'
+  if (/redirect/i.test(msg)) return 'URL de redirecionamento não autorizada no Supabase.'
   return msg
 }
