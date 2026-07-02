@@ -1,8 +1,8 @@
 import {
   Bot,
+  Calculator,
   CreditCard,
   Database,
-  FileSignature,
   FileStack,
   Handshake,
   HardHat,
@@ -10,7 +10,6 @@ import {
   LandPlot,
   PencilRuler,
   Percent,
-  Receipt,
   Stamp,
   Truck,
   UsersRound,
@@ -32,7 +31,7 @@ export interface AppEntry {
   name: string
   /** Descrição curta exibida no card. */
   description: string
-  /** URL de acesso ao sistema. TODO: preencher com o endereço real. */
+  /** URL de acesso ao sistema. */
   url: string
   icon: LucideIcon
   category: AppCategory['id']
@@ -59,7 +58,6 @@ export const CATEGORIES: AppCategory[] = [
 
 /* ------------------------------------------------------------------ */
 /*  Aplicações                                                         */
-/*  ⚠️ Troque os `url: '#'` pelos endereços reais de cada sistema.     */
 /* ------------------------------------------------------------------ */
 export const APPS: AppEntry[] = [
   // --- Comercial & Vendas ---
@@ -67,7 +65,7 @@ export const APPS: AppEntry[] = [
     id: 'perdigueiro',
     name: 'Perdigueiro',
     description: 'Captação de novas áreas e glebas + pesquisa de mercado.',
-    url: '#',
+    url: 'https://perdigueiro.youngempreendimentos.com.br/login',
     icon: LandPlot,
     category: 'comercial',
     status: 'ativo',
@@ -77,7 +75,7 @@ export const APPS: AppEntry[] = [
     id: 'crm',
     name: 'CRM & Comercial',
     description: 'Funil de vendas, leads, tabela de preços, lotes e contratos.',
-    url: '#',
+    url: 'https://pingolead.youngempreendimentos.com.br/dashboard',
     icon: Handshake,
     category: 'comercial',
     status: 'ativo',
@@ -87,7 +85,7 @@ export const APPS: AppEntry[] = [
     id: 'comissoes',
     name: 'Comissões',
     description: 'Cálculo e aprovação de comissões de corretores.',
-    url: '#',
+    url: 'https://comissoes.youngempreendimentos.com.br/login',
     icon: Percent,
     category: 'comercial',
     status: 'ativo',
@@ -98,28 +96,18 @@ export const APPS: AppEntry[] = [
   {
     id: 'adimpla',
     name: 'ADIMPLA',
-    description: 'Gestão de cobrança e inadimplência (sistema atual).',
-    url: '#',
+    description: 'Gestão de cobrança e inadimplência.',
+    url: 'https://adimpla.lovable.app',
     icon: CreditCard,
     category: 'financeiro',
     status: 'ativo',
     tech: 'Lovable',
   },
   {
-    id: 'cobranca-legado',
-    name: 'Cobrança (legado)',
-    description: 'Sistema antigo de inadimplência e intimações (Word/PDF).',
-    url: '#',
-    icon: Receipt,
-    category: 'financeiro',
-    status: 'legado',
-    tech: 'Python/Flask',
-  },
-  {
     id: 'posvenda',
     name: 'Pós-venda',
     description: 'Distratos, renegociação, leilão, titularidade e escritura.',
-    url: '#',
+    url: 'https://processosposvenda.youngempreendimentos.com.br/',
     icon: Headset,
     category: 'financeiro',
     status: 'ativo',
@@ -128,29 +116,29 @@ export const APPS: AppEntry[] = [
   {
     id: 'sienge',
     name: 'Sienge',
-    description: 'Espelho do ERP: contratos, unidades, clientes e parcelas.',
-    url: '#',
+    description: 'ERP: contratos, unidades, clientes e parcelas.',
+    url: 'https://youngemp.sienge.com.br/sienge/8/index.html',
     icon: Database,
     category: 'financeiro',
     status: 'ativo',
-    tech: 'Sync ERP',
+    tech: 'ERP',
   },
   {
     id: 'registros',
     name: 'Registros',
     description: 'Registros de cartório, documentação e comprovantes.',
-    url: '#',
+    url: 'https://sistemaderegistros.youngempreendimentos.com.br/login',
     icon: FileStack,
     category: 'financeiro',
     status: 'ativo',
     tech: 'Lovable',
   },
   {
-    id: 'aditivo',
-    name: 'Aditivo',
-    description: 'Gestão de aditivos contratuais.',
-    url: '#',
-    icon: FileSignature,
+    id: 'recalcula',
+    name: 'Recalcula',
+    description: 'Recálculo e aditivos de contratos.',
+    url: 'https://recalcula.youngempreendimentos.com.br/',
+    icon: Calculator,
     category: 'financeiro',
     status: 'ativo',
     tech: 'Lovable',
@@ -161,7 +149,7 @@ export const APPS: AppEntry[] = [
     id: 'paver',
     name: 'Paver',
     description: 'Gestão de obras: EAP, diários, orçamentos e fotos.',
-    url: '#',
+    url: 'https://paver.youngempreendimentos.com.br/',
     icon: HardHat,
     category: 'obras',
     status: 'ativo',
@@ -171,7 +159,7 @@ export const APPS: AppEntry[] = [
     id: 'esquadro',
     name: 'Esquadro',
     description: 'Demandas de projetos e registro de horas.',
-    url: '#',
+    url: 'https://esquadro.youngempreendimentos.com.br/',
     icon: PencilRuler,
     category: 'obras',
     status: 'ativo',
@@ -181,7 +169,7 @@ export const APPS: AppEntry[] = [
     id: 'destrava',
     name: 'Destrava',
     description: 'Licenciamento de empreendimentos junto a órgãos externos (Kanban).',
-    url: '#',
+    url: 'https://destrava.youngempreendimentos.com.br/',
     icon: Stamp,
     category: 'obras',
     status: 'ativo',
@@ -191,9 +179,9 @@ export const APPS: AppEntry[] = [
   // --- Pessoas & Frota ---
   {
     id: 'rh',
-    name: 'RH',
+    name: 'RH · Pilares',
     description: 'Funcionários, folha, aditivos, treinamentos e auditorias.',
-    url: '#',
+    url: 'https://pilares.youngempreendimentos.com.br/',
     icon: UsersRound,
     category: 'pessoas',
     status: 'ativo',
@@ -203,7 +191,7 @@ export const APPS: AppEntry[] = [
     id: 'talents',
     name: 'Talents',
     description: 'Recrutamento e seleção.',
-    url: '#',
+    url: 'https://talents.youngempreendimentos.com.br/',
     icon: UserSearch,
     category: 'pessoas',
     status: 'ativo',
@@ -213,11 +201,11 @@ export const APPS: AppEntry[] = [
     id: 'frota',
     name: 'Frota',
     description: 'Veículos, manutenções, abastecimentos e sinistros.',
-    url: '#',
+    url: 'https://young-empreendimentos.github.io/Controledefrota/',
     icon: Truck,
     category: 'pessoas',
     status: 'ativo',
-    tech: 'Lovable',
+    tech: 'GitHub Pages',
   },
 
   // --- Automação ---
