@@ -1,5 +1,4 @@
 import {
-  Bot,
   Calculator,
   CreditCard,
   Database,
@@ -53,7 +52,6 @@ export const CATEGORIES: AppCategory[] = [
   { id: 'financeiro', label: 'Financeiro & Cobrança', accent: 'var(--color-young-teal)' },
   { id: 'obras', label: 'Obras & Engenharia', accent: 'var(--color-young-blue-bright)' },
   { id: 'pessoas', label: 'Pessoas & Frota', accent: 'var(--color-young-gray-light)' },
-  { id: 'automacao', label: 'Automação', accent: 'var(--color-young-orange-dark)' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -206,17 +204,5 @@ export const APPS: AppEntry[] = [
     category: 'pessoas',
     status: 'ativo',
     tech: 'GitHub Pages',
-  },
-
-  // --- Automação ---
-  {
-    id: 'bots-n8n',
-    name: 'Bots (n8n)',
-    description: 'Bots de WhatsApp e automações de fluxo.',
-    url: '#',
-    icon: Bot,
-    category: 'automacao',
-    status: 'ativo',
-    tech: 'n8n',
   },
 ]
