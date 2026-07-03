@@ -95,7 +95,7 @@ export const APPS: AppEntry[] = [
     id: 'adimpla',
     name: 'ADIMPLA',
     description: 'Gestão de cobrança e inadimplência.',
-    url: 'https://adimpla.lovable.app',
+    url: 'https://adimpla.youngempreendimentos.com.br/login',
     icon: CreditCard,
     category: 'financeiro',
     status: 'ativo',
