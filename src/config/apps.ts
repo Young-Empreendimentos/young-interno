@@ -1,4 +1,5 @@
 import {
+  BarChart3,
   Calculator,
   CreditCard,
   Database,
@@ -50,6 +51,7 @@ export interface AppEntry {
 /*  Categorias                                                         */
 /* ------------------------------------------------------------------ */
 export const CATEGORIES: AppCategory[] = [
+  { id: 'novos-negocios', label: 'Novos Negócios', accent: 'var(--color-young-orange-dark)' },
   { id: 'comercial', label: 'Comercial & Vendas', accent: 'var(--color-young-orange)' },
   { id: 'financeiro', label: 'Financeiro & Cobrança', accent: 'var(--color-young-teal)' },
   { id: 'obras', label: 'Obras & Engenharia', accent: 'var(--color-young-blue-bright)' },
@@ -60,17 +62,29 @@ export const CATEGORIES: AppCategory[] = [
 /*  Aplicações                                                         */
 /* ------------------------------------------------------------------ */
 export const APPS: AppEntry[] = [
-  // --- Comercial & Vendas ---
+  // --- Novos Negócios ---
   {
     id: 'perdigueiro',
     name: 'Perdigueiro',
     description: 'Captação de novas áreas e glebas + pesquisa de mercado.',
     url: 'https://perdigueiro.youngempreendimentos.com.br/login',
     icon: LandPlot,
-    category: 'comercial',
+    category: 'novos-negocios',
     status: 'ativo',
     tech: 'Lovable',
   },
+  {
+    id: 'demografia-municipal',
+    name: 'Demografia Municipal',
+    description: 'Dados demográficos dos municípios para análise de novos negócios.',
+    url: 'https://demografiamunicipal.youngempreendimentos.com.br/',
+    icon: BarChart3,
+    category: 'novos-negocios',
+    status: 'ativo',
+    tech: 'Lovable',
+  },
+
+  // --- Comercial & Vendas ---
   {
     id: 'crm',
     name: 'CRM & Comercial',
