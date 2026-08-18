@@ -21,7 +21,7 @@ export function Dashboard() {
     const q = normalize(query.trim())
     if (!q) return APPS
     return APPS.filter((app) =>
-      normalize(`${app.name} ${app.description} ${app.tech ?? ''}`).includes(q),
+      normalize(`${app.name} ${app.description ?? ''} ${app.tech ?? ''}`).includes(q),
     )
   }, [query])
 

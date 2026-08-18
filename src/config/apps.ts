@@ -8,6 +8,7 @@ import {
   HardHat,
   Headset,
   LandPlot,
+  LayoutDashboard,
   MapPinned,
   PencilRuler,
   Percent,
@@ -31,8 +32,8 @@ export interface AppCategory {
 export interface AppEntry {
   id: string
   name: string
-  /** Descrição curta exibida no card. */
-  description: string
+  /** Descrição curta exibida no card. Opcional. */
+  description?: string
   /** URL de acesso ao sistema. */
   url: string
   icon: LucideIcon
@@ -56,6 +57,7 @@ export const CATEGORIES: AppCategory[] = [
   { id: 'financeiro', label: 'Financeiro & Cobrança', accent: 'var(--color-young-teal)' },
   { id: 'obras', label: 'Obras & Engenharia', accent: 'var(--color-young-blue-bright)' },
   { id: 'pessoas', label: 'Pessoas & Frota', accent: 'var(--color-young-gray-light)' },
+  { id: 'gestao', label: 'Gestão', accent: 'var(--color-young-blue-bright)' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -240,5 +242,16 @@ export const APPS: AppEntry[] = [
     category: 'pessoas',
     status: 'ativo',
     tech: 'GitHub Pages',
+  },
+
+  // --- Gestão ---
+  {
+    id: 'posicao',
+    name: 'Posição',
+    url: 'https://posicao.youngempreendimentos.com.br/#',
+    icon: LayoutDashboard,
+    category: 'gestao',
+    status: 'ativo',
+    tech: 'Lovable',
   },
 ]

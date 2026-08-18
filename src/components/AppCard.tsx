@@ -45,7 +45,11 @@ export function AppCard({ app }: { app: AppEntry }) {
         <h3 className="font-display text-base font-semibold text-young-gray-lighter">
           {app.name}
         </h3>
-        <p className="mt-1 text-sm leading-snug text-young-gray-light/60">{app.description}</p>
+        {app.description && (
+          <p className="mt-1 text-sm leading-snug text-young-gray-light/60">
+            {app.description}
+          </p>
+        )}
       </div>
 
       {app.url === '#' && (
