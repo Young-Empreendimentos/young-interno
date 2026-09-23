@@ -10,6 +10,7 @@ import {
   LandPlot,
   LayoutDashboard,
   MapPinned,
+  MessagesSquare,
   PencilRuler,
   Percent,
   SlidersHorizontal,
@@ -253,5 +254,15 @@ export const APPS: AppEntry[] = [
     category: 'gestao',
     status: 'ativo',
     tech: 'Lovable',
+  },
+  {
+    id: 'conversas',
+    name: 'Conversas',
+    description: 'Central de atendimento e conversas com clientes.',
+    url: 'https://chatwoot-production-1787.up.railway.app',
+    icon: MessagesSquare,
+    category: 'gestao',
+    status: 'ativo',
+    tech: 'Railway',
   },
 ]
