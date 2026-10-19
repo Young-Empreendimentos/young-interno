@@ -250,7 +250,6 @@ export const APPS: AppEntry[] = [
   {
     id: 'contabil',
     name: 'Contábil Gerencial',
-    description: 'Demonstrativos gerenciais consolidados: Balanço, DRE, DFC, distratos e indicadores.',
     url: 'https://isidra.youngempreendimentos.com.br/',
     icon: Landmark,
     category: 'gestao',
