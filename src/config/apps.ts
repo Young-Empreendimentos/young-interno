@@ -8,6 +8,7 @@ import {
   HardHat,
   Headset,
   LandPlot,
+  Landmark,
   LayoutDashboard,
   MapPinned,
   MessagesSquare,
@@ -246,6 +247,16 @@ export const APPS: AppEntry[] = [
   },
 
   // --- Gestão ---
+  {
+    id: 'contabil',
+    name: 'Contábil Gerencial',
+    description: 'Demonstrativos gerenciais consolidados: Balanço, DRE, DFC, distratos e indicadores.',
+    url: 'https://isidra.youngempreendimentos.com.br/',
+    icon: Landmark,
+    category: 'gestao',
+    status: 'ativo',
+    tech: 'React · Railway',
+  },
   {
     id: 'posicao',
     name: 'Posição',
