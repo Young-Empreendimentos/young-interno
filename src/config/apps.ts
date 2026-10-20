@@ -130,6 +130,15 @@ export const APPS: AppEntry[] = [
     status: 'ativo',
     tech: 'Lovable',
   },
+  {
+    id: 'marketing',
+    name: 'Marketing',
+    description: 'Indicadores, cronogramas e status ao vivo das campanhas.',
+    url: 'https://vargas.youngempreendimentos.com.br',
+    icon: Megaphone,
+    category: 'comercial',
+    status: 'ativo',
+  },
 
   // --- Financeiro & Cobrança ---
   {
@@ -275,13 +284,5 @@ export const APPS: AppEntry[] = [
     category: 'gestao',
     status: 'ativo',
     tech: 'Railway',
-  },
-  {
-    id: 'marketing',
-    name: 'Marketing',
-    url: 'https://vargas.youngempreendimentos.com.br',
-    icon: Megaphone,
-    category: 'gestao',
-    status: 'ativo',
   },
 ]
