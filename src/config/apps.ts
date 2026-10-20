@@ -17,6 +17,7 @@ import {
   Percent,
   SlidersHorizontal,
   Stamp,
+  Target,
   Truck,
   UsersRound,
   UserSearch,
@@ -254,6 +255,15 @@ export const APPS: AppEntry[] = [
     category: 'pessoas',
     status: 'ativo',
     tech: 'GitHub Pages',
+  },
+  {
+    id: 'metas',
+    name: 'Metas',
+    description: 'Metas e objetivos da equipe.',
+    url: 'https://metas.youngempreendimentos.com.br/',
+    icon: Target,
+    category: 'pessoas',
+    status: 'ativo',
   },
 
   // --- Gestão ---
