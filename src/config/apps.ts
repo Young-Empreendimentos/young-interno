@@ -11,6 +11,7 @@ import {
   Landmark,
   LayoutDashboard,
   MapPinned,
+  Megaphone,
   MessagesSquare,
   PencilRuler,
   Percent,
@@ -274,5 +275,13 @@ export const APPS: AppEntry[] = [
     category: 'gestao',
     status: 'ativo',
     tech: 'Railway',
+  },
+  {
+    id: 'marketing',
+    name: 'Marketing',
+    url: 'https://vargas.youngempreendimentos.com.br',
+    icon: Megaphone,
+    category: 'gestao',
+    status: 'ativo',
   },
 ]
