@@ -15,6 +15,7 @@ import {
   MessagesSquare,
   PencilRuler,
   Percent,
+  ScrollText,
   SlidersHorizontal,
   Stamp,
   Target,
@@ -191,6 +192,15 @@ export const APPS: AppEntry[] = [
     category: 'financeiro',
     status: 'ativo',
     tech: 'Lovable',
+  },
+  {
+    id: 'titulos',
+    name: 'Títulos',
+    description: 'Gestão de títulos.',
+    url: 'https://titulos.youngempreendimentos.com.br/',
+    icon: ScrollText,
+    category: 'financeiro',
+    status: 'ativo',
   },
 
   // --- Obras & Engenharia ---
