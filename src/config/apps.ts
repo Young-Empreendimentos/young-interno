@@ -260,11 +260,11 @@ export const APPS: AppEntry[] = [
     id: 'frota',
     name: 'Frota',
     description: 'Veículos, manutenções, abastecimentos e sinistros.',
-    url: 'https://young-empreendimentos.github.io/Controledefrota/',
+    url: 'https://frota.youngempreendimentos.com.br/',
     icon: Truck,
     category: 'pessoas',
     status: 'ativo',
-    tech: 'GitHub Pages',
+    tech: 'React · Railway',
   },
   {
     id: 'metas',
