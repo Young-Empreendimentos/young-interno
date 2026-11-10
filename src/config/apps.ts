@@ -10,6 +10,7 @@ import {
   LandPlot,
   Landmark,
   LayoutDashboard,
+  LifeBuoy,
   MapPinned,
   Megaphone,
   MessagesSquare,
@@ -304,5 +305,17 @@ export const APPS: AppEntry[] = [
     category: 'gestao',
     status: 'ativo',
     tech: 'Railway',
+  },
+  {
+    // Para todos: quem não é da TI só vê "Fazer um pedido" e "Meus pedidos";
+    // a própria Central mostra o quadro (andamento e feitos) só para a equipe da TI.
+    id: 'central-ti',
+    name: 'Central da TI',
+    description: 'Peça ajuda à TI (problema, melhoria, acesso, sistema novo) e acompanhe seus pedidos.',
+    url: 'https://ti.youngempreendimentos.com.br/',
+    icon: LifeBuoy,
+    category: 'gestao',
+    status: 'ativo',
+    tech: 'React · Railway',
   },
 ]
