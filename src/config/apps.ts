@@ -1,8 +1,10 @@
 import {
   BarChart3,
   Calculator,
+  ClipboardCheck,
   CreditCard,
   Database,
+  DraftingCompass,
   FileStack,
   Handshake,
   HardHat,
@@ -90,6 +92,16 @@ export const APPS: AppEntry[] = [
     category: 'novos-negocios',
     status: 'ativo',
     tech: 'Lovable',
+  },
+  {
+    id: 'viabilidade',
+    name: 'Viabilidade de Loteamentos',
+    description: 'Estudo de viabilidade de novos loteamentos.',
+    url: 'https://viabilidade-loteamentos-production.up.railway.app/',
+    icon: ClipboardCheck,
+    category: 'novos-negocios',
+    status: 'ativo',
+    tech: 'Railway',
   },
 
   // --- Comercial & Vendas ---
@@ -234,6 +246,16 @@ export const APPS: AppEntry[] = [
     category: 'obras',
     status: 'ativo',
     tech: 'React · Railway',
+  },
+  {
+    id: 'prancheta',
+    name: 'Prancheta',
+    description: 'Projetos e desenhos técnicos.',
+    url: 'https://young-empreendimentos.github.io/prancheta/',
+    icon: DraftingCompass,
+    category: 'obras',
+    status: 'ativo',
+    tech: 'GitHub Pages',
   },
 
   // --- Pessoas & Frota ---
