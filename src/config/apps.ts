@@ -101,7 +101,7 @@ export const APPS: AppEntry[] = [
     url: 'https://viabilidade.youngempreendimentos.com.br/',
     icon: TrendingUp,
     category: 'novos-negocios',
-    status: 'em-breve',
+    status: 'ativo',
     tech: 'React · Railway',
   },
 
