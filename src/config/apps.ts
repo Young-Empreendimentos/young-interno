@@ -94,16 +94,6 @@ export const APPS: AppEntry[] = [
     status: 'ativo',
     tech: 'Lovable',
   },
-  {
-    id: 'viabilidade',
-    name: 'Viabilidade',
-    description: 'Viabilidade financeira dos empreendimentos por fase: premissas, indicadores e critérios de investimento.',
-    url: 'https://viabilidade.youngempreendimentos.com.br/',
-    icon: TrendingUp,
-    category: 'novos-negocios',
-    status: 'ativo',
-    tech: 'React · Railway',
-  },
 
   // --- Comercial & Vendas ---
   {
@@ -347,6 +337,16 @@ export const APPS: AppEntry[] = [
     description: 'Peça ajuda à TI (problema, melhoria, acesso, sistema novo) e acompanhe seus pedidos.',
     url: 'https://ti.youngempreendimentos.com.br/',
     icon: LifeBuoy,
+    category: 'gestao',
+    status: 'ativo',
+    tech: 'React · Railway',
+  },
+  {
+    id: 'viabilidade',
+    name: 'Viabilidade',
+    description: 'Viabilidade financeira dos empreendimentos por fase: premissas, indicadores e critérios de investimento.',
+    url: 'https://viabilidade.youngempreendimentos.com.br/',
+    icon: TrendingUp,
     category: 'gestao',
     status: 'ativo',
     tech: 'React · Railway',
