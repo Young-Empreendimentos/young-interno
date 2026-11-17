@@ -22,6 +22,7 @@ import {
   SlidersHorizontal,
   Stamp,
   Target,
+  TrendingUp,
   Truck,
   UsersRound,
   UserSearch,
@@ -92,6 +93,16 @@ export const APPS: AppEntry[] = [
     category: 'novos-negocios',
     status: 'ativo',
     tech: 'Lovable',
+  },
+  {
+    id: 'viabilidade',
+    name: 'Viabilidade',
+    description: 'Viabilidade financeira dos empreendimentos por fase: premissas, indicadores e critérios de investimento.',
+    url: 'https://viabilidade.youngempreendimentos.com.br/',
+    icon: TrendingUp,
+    category: 'novos-negocios',
+    status: 'em-breve',
+    tech: 'React · Railway',
   },
 
   // --- Comercial & Vendas ---
