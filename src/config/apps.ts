@@ -1,11 +1,11 @@
 import {
   BarChart3,
   Calculator,
-  ClipboardCheck,
   CreditCard,
   Database,
   DraftingCompass,
   FileStack,
+  Grid2x2,
   Handshake,
   HardHat,
   Headset,
@@ -92,16 +92,6 @@ export const APPS: AppEntry[] = [
     category: 'novos-negocios',
     status: 'ativo',
     tech: 'Lovable',
-  },
-  {
-    id: 'projetos',
-    name: 'Projetos de Loteamento',
-    description: 'Gera o projeto do loteamento a partir do DXF da gleba.',
-    url: 'https://projetos.youngempreendimentos.com.br/',
-    icon: ClipboardCheck,
-    category: 'novos-negocios',
-    status: 'ativo',
-    tech: 'Railway',
   },
 
   // --- Comercial & Vendas ---
@@ -256,6 +246,16 @@ export const APPS: AppEntry[] = [
     category: 'obras',
     status: 'ativo',
     tech: 'GitHub Pages',
+  },
+  {
+    id: 'projetos',
+    name: 'Projetos de Loteamento',
+    description: 'Gera o projeto do loteamento a partir do DXF da gleba.',
+    url: 'https://projetos.youngempreendimentos.com.br/',
+    icon: Grid2x2,
+    category: 'obras',
+    status: 'ativo',
+    tech: 'Railway',
   },
 
   // --- Pessoas & Frota ---
